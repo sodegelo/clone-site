@@ -23,7 +23,7 @@ const timeout = (time*60)*1000;
 console.log("\x1b[34m", "Processing:          ");  
 console.log("\x1b[33m", "  Clonning:          ","\x1b[37m",site  );  
 console.log("\x1b[33m", "  To Folder:         ","\x1b[37m",folder ); 
-console.log("\x1b[33m", "  Max Execution:   ","\x1b[37m",time,"\x1b[33m","Min") ;
+console.log("\x1b[33m", "  Max Execution:     ","\x1b[37m",time,"\x1b[33m","Min") ;
 console.log("\x1b[33m", ""); 
 console.log("\x1b[33m", ""); 
 console.log("\x1b[34m", "Clonning. Wait ...");  
