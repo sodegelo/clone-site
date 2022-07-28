@@ -6,8 +6,14 @@ import path from 'path';
 
 const  site     = process.argv[2];
 const  folder   = process.argv[3]; 
-const  time     = process.argv[4] || 5; 
- 
+let  time     = process.argv[4] || 5; 
+let   hasTimeout  = true;
+
+if(time === 'none'){
+    time = 1;
+    hasTimeout= false;
+}
+
 if(!validate(site,folder,time)){
     exit(0);
 }
@@ -17,12 +23,20 @@ const timeout = (time*60)*1000;
 console.log("\x1b[34m", "Processing:          ");  
 console.log("\x1b[33m", "  Clonning:          ","\x1b[37m",site  );  
 console.log("\x1b[33m", "  To Folder:         ","\x1b[37m",folder ); 
-console.log("\x1b[33m", "  Max %cExecution:   ","\x1b[37m",time,"\x1b[33m","Min") ;
+console.log("\x1b[33m", "  Max Execution:   ","\x1b[37m",time,"\x1b[33m","Min") ;
+console.log("\x1b[33m", ""); 
+console.log("\x1b[33m", ""); 
+console.log("\x1b[34m", "Clonning. Wait ...");  
+
+
 console.log("\x1b[37m", "");  
 
-setTimeout(async () => {
-    exit(0);
-}, timeout);
+if(hasTimeout){
+    setTimeout(async () => {
+        exit(0);
+    }, timeout);
+}
+
 
 await scrape({
     urls: [site],
