@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "clone": "node index.mjs"
+  },
+  "dependencies": {
+    "website-scraper": "^5.2.0",
+    "website-scraper-puppeteer": "^1.0.0"
+  }
+}
